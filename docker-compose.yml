@@ -1,0 +1,39 @@
+version: "3.8"
+
+services:
+  clickhouse:
+    image: clickhouse/clickhouse-server:latest
+    container_name: clickhouse
+    ports:
+      - "8123:8123"
+      - "9000:9000"
+    volumes:
+      - clickhouse_data:/var/lib/clickhouse
+    ulimits:
+      nofile:
+        soft: 262144
+        hard: 262144
+
+  frontend:
+    build: .
+    container_name: frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - clickhouse
+
+  backend:
+    build:
+      context: ./server
+    container_name: backend
+    ports:
+      - "4000:4000"
+    volumes:
+      - ./server:/app
+    working_dir: /app
+    command: npm start
+    depends_on:
+      - clickhouse
+
+volumes:
+  clickhouse_data:

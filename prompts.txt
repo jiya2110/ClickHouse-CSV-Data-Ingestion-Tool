@@ -1,0 +1,11 @@
+# Recorded Prompts for AI Interaction
+
+1. Add a new endpoint to the Flask API service that logs requests and returns a JSON response with a welcome message. Ensure the log messages include request metadata like method and path.
+
+2. Help me to create a set of prompts which you have recorded to be sent or checked into GitHub as a prompts.txt. Using AI add a few more.
+
+3. Create a React component that displays a progress bar with customizable colors and animation speed.
+
+4. Write a utility function in TypeScript to parse CSV data into JSON objects with type safety.
+
+
