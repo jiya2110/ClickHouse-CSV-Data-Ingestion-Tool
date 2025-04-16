@@ -90,10 +90,5 @@ This will start the ClickHouse server, backend, and frontend services.
 └── README.md               # This file
 ```
 
-## License
 
-This project is provided as-is without a specific license.
 
-## Contact
-
-For questions or contributions, please open an issue or submit a pull request.
